@@ -161,8 +161,8 @@ const StudentManagement = () => {
       }
 
       const url = editingStudent 
-        ? `http://localhost:5000/api/students/${editingStudent._id}`
-        : 'http://localhost:5000/api/students';
+        ? `VITE_API_URL/students/${editingStudent._id}`
+        : 'VITE_API_URL/students';
 
       const response = await fetch(url, {
         method: editingStudent ? 'PUT' : 'POST',
@@ -211,7 +211,7 @@ const StudentManagement = () => {
         return;
       }
 
-      const response = await fetch(`http://localhost:5000/api/students/${studentToDelete._id}`, {
+      const response = await fetch(`VITE_API_URL/students/${studentToDelete._id}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`

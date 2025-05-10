@@ -131,7 +131,7 @@ const TutorOverview = () => {
           throw new Error('Authentication token not found')
         }
 
-        const response = await fetch('http://localhost:5000/api/tutors/attendance', {
+        const response = await fetch('VITE_API_URL/tutors/attendance', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

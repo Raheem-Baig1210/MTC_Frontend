@@ -116,7 +116,7 @@ const TutorStudents = () => {
 
       console.log('Sending student data:', formattedData) // Debug log
 
-      const response = await fetch('http://localhost:5000/api/students', {
+      const response = await fetch('VITE_API_URL/students', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -173,7 +173,7 @@ const TutorStudents = () => {
           throw new Error('Please login to continue')
         }
 
-        const response = await fetch(`http://localhost:5000/api/students/${id}`, {
+        const response = await fetch(`VITE_API_URL/students/${id}`, {
           method: 'DELETE',
           headers: {
             'Authorization': `Bearer ${token}`
@@ -287,7 +287,7 @@ const TutorStudents = () => {
         throw new Error('Please login to continue')
       }
 
-      const response = await fetch(`http://localhost:5000/api/students/${selectedStudent._id}/attendance`, {
+      const response = await fetch(`VITE_API_URL/students/${selectedStudent._id}/attendance`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -407,7 +407,7 @@ const TutorStudents = () => {
       
       console.log('Updating student with data:', updatedData)
       
-      const response = await fetch(`http://localhost:5000/api/students/${editFormData._id}`, {
+      const response = await fetch(`VITE_API_URL/students/${editFormData._id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -444,7 +444,7 @@ const TutorStudents = () => {
     try {
       const token = localStorage.getItem('token')
       if (!token) throw new Error('Please login to continue')
-      const response = await fetch(`http://localhost:5000/api/students/${studentId}`, {
+      const response = await fetch(`VITE_API_URL/students/${studentId}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`

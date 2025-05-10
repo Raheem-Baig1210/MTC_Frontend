@@ -11,7 +11,7 @@ const useGet = (endpoint) => {
 
     try {
       setLoading(true);
-      const res = await fetch(`http://localhost:5000/api${endpoint}`, {
+      const res = await fetch(`VITE_API_URL${endpoint}`, {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'

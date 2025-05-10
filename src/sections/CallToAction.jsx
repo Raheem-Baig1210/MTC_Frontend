@@ -74,7 +74,7 @@ const CallToAction = () => {
       formDataToSend.append('resume', formData.resume)
       
       // Send application data to backend
-      const response = await fetch('http://localhost:5000/api/tutor-applications', {
+      const response = await fetch('VITE_API_URL/tutor-applications', {
         method: 'POST',
         body: formDataToSend
       })
@@ -113,7 +113,7 @@ const CallToAction = () => {
     
     try {
       // Send contact form data to backend
-      const response = await fetch('http://localhost:5000/api/contact', {
+      const response = await fetch('VITE_API_URL/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

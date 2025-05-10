@@ -23,7 +23,7 @@ const Students = () => {
 
   const fetchStudents = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/students', {
+      const response = await fetch('VITE_API_URL/students', {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`
         }
@@ -40,7 +40,7 @@ const Students = () => {
 
   const fetchCenters = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/centers', {
+      const response = await fetch('VITE_API_URL/centers', {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`
         }
@@ -54,7 +54,7 @@ const Students = () => {
 
   const fetchTutors = async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/tutors', {
+      const response = await fetch('VITE_API_URL/tutors', {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`
         }
